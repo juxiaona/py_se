@@ -139,11 +139,16 @@ class Base():
 		element=self.get_element(by, css)
 		ActionChains(self.driver).double_click(element).perform()
 
-	def select_element(self,by,css,value):
+	def select_by_value(self,by,css,value):
 		'''下拉框选择'''
 		self.wait_element(by,css)
 		element=self.get_element(by,css)
 		Select(element).select_by_value(value)
+
+	def select_by_text(self,by,css,text):
+		self.wait_element(by, css)
+		element=self.get_element(by, css)
+		Select(element).select_by_value(text)
 
 	def get_element_text(self,by,css):
 		'''获取元素text'''
